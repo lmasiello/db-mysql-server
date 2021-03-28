@@ -6,7 +6,7 @@
     "configurations": [
         {
             "name": "Launch Program",
-            "program": "${workspaceFolder}/app/index.js",
+            "program": "${workspaceFolder}/server/index.js",
             "request": "launch",
             "skipFiles": [
             ],
