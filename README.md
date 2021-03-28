@@ -19,12 +19,17 @@ These instructions will get you a copy of the project up and running on your loc
 
 Create New Migration
 ```
-sequelize-cli migration:generate --name [name]
+npm run db:migration:create --name [name]
+```
+
+Run Migration to Last Header
+```
+npm run db:migration:all
 ```
 
 Undo Last Migration 
 ```
-sequelize-cli db:migrate:undo
+npm run db:migration:undo
 ```
 
 Undo Migration To

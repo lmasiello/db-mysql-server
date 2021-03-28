@@ -1,13 +1,13 @@
 'use strict';
 
-const uuidv4 = require('uuid').v4;
+const { TABLE_NAMES } = require('../enums');
 
 module.exports = {
   up: async function (queryInterface, Sequelize) {
-    return queryInterface.addColumn('Users', 'last_name', Sequelize.STRING);
+    return queryInterface.addColumn(TABLE_NAMES.USERS, 'last_name', Sequelize.STRING);
   },
 
   down: async function (queryInterface, Sequelize) {
-    return queryInterface.removeColumn('Users', 'last_name');
+    return queryInterface.removeColumn(TABLE_NAMES.USERS, 'last_name');
   },
 };

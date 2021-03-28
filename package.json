@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "database:first-sync": "node ./scripts/first-sync-db.js"
+    "db:first-sync": "node ./scripts/first-sync-db.js",
+    "db:migration:all": "sequelize db:migrate",
+    "db:migration:undo": "sequelize db:migrate:undo",
+    "db:migration:create": "sequelize-cli migration:generate --name"
   },
   "author": "",
   "license": "ISC",
