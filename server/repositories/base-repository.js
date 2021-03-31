@@ -76,9 +76,9 @@ class BaseRepository {
     // }
 
     // perform search
-    return this.model
-      .findOne({ where, ...optional })
-      .then(data => ExtractDataValues(data.dataValues));
+    return this.model.findOne({ where, ...optional }).then(data => {
+      return data ? ExtractDataValues(data.dataValues) : null;
+    });
   }
 }
 

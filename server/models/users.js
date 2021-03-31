@@ -1,5 +1,6 @@
 'use strict';
 const { Model, Sequelize } = require('sequelize');
+const { HashPassword } = require('../helpers');
 module.exports = (sequelize, DataTypes) => {
   class Users extends Model {
     /**
@@ -11,6 +12,11 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       const { Device, User } = models;
       User.hasMany(Device);
+
+      User.beforeCreate(async (user, options) => {
+        const hashedPassword = await HashPassword(user.password);
+        user.password = hashedPassword;
+      });
     }
   }
   Users.init(
